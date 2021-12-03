@@ -29,7 +29,7 @@ public class Agregar {
 
   @Test
   public void testAgregar() throws Exception {
-    driver.get("http://localhost:3000/");
+    driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
@@ -53,9 +53,9 @@ public class Agregar {
     }
   }
   
-  @Test
+  /*@Test
   public void testModificar() throws Exception {
-    driver.get("http://localhost:3000/");
+    driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
@@ -64,7 +64,7 @@ public class Agregar {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
     driver.findElement(By.xpath("//i")).click();
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
-    
+    pause(5000);
     String textoEjecucion = driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
     String textoEsperado = "Maria Tapia";
     assertThat(textoEsperado, is(textoEjecucion));
@@ -72,32 +72,16 @@ public class Agregar {
 
   @Test
   public void testEliminar() throws Exception {
-    driver.get("http://localhost:3000/");
+    driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Maria Tapia'])[2]/following::button[1]")).click();
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
-    String textoEjecucion = driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
+    pause(5000);
+	String textoEjecucion = driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
     String textoEsperado = "Maria Tapia";
     assertThat(textoEsperado, not(textoEjecucion));
     
-    /*try {
-      assertEquals("Pepe", driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[2]/td")).click();
-    try {
-      assertEquals("Harold", driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[2]/td")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[3]/td")).click();
-    try {
-      assertEquals("Luis", driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[3]/td")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }*/
-  }
+  }*/
   
   @After
   public void tearDown() throws Exception {
