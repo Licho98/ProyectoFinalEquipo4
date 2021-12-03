@@ -27,7 +27,7 @@ public class TestAgregar {
     js = (JavascriptExecutor) driver;
   }
 
-  @Test
+ /* @Test
   public void testAgregar() throws Exception {
     driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
@@ -51,9 +51,9 @@ public class TestAgregar {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-  }
+  }*/
   
-  /*@Test
+  @Test
   public void testModificar() throws Exception {
     driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
@@ -70,7 +70,7 @@ public class TestAgregar {
     assertThat(textoEsperado, is(textoEjecucion));
   }
 
-  @Test
+ /* @Test
   public void testEliminar() throws Exception {
     driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
