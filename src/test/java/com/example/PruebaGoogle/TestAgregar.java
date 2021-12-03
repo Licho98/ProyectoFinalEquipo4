@@ -73,7 +73,7 @@ public class TestAgregar {
  @Test
   public void testEliminar() throws Exception {
     driver.get("https://mern-crud.herokuapp.com");
-    driver.findElement(By.xpath("xpath=//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Maria Tapia'])[2]/following::button[1]")).click();
     driver.findElement(By.xpath("xpath=//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
     pause(5000);
