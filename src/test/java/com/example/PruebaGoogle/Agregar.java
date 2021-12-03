@@ -53,7 +53,7 @@ public class Agregar {
     }
   }
   
-  /*@Test
+  @Test
   public void testModificar() throws Exception {
     driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
@@ -81,7 +81,7 @@ public class Agregar {
     String textoEsperado = "Maria Tapia";
     assertThat(textoEsperado, not(textoEjecucion));
     
-  }*/
+  }
   
   @After
   public void tearDown() throws Exception {
