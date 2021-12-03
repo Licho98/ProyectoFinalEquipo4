@@ -75,9 +75,9 @@ public class TestAgregar {
     driver.get("https://mern-crud.herokuapp.com");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Maria Tapia'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[1]")).click();
     pause(5000);
-	String textoEjecucion = driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
+	String textoEjecucion = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[1]")).getText();
     String textoEsperado = "Maria Tapia";
     assertThat(textoEsperado, not(textoEjecucion));
   }
