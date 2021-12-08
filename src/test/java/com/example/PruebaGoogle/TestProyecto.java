@@ -1,6 +1,7 @@
 package com.example.PruebaGoogle;
 
 import java.util.regex.Pattern;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -11,8 +12,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class TestAgregar {
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class TestProyecto {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -27,9 +30,9 @@ public class TestAgregar {
     js = (JavascriptExecutor) driver;
   }
 
- /* @Test
+  @Test
   public void testAgregar() throws Exception {
-    driver.get("https://mern-crud.herokuapp.com");
+    driver.get("https://mern-crud.herokuapp.com/");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
@@ -51,11 +54,11 @@ public class TestAgregar {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-  }*/
+  }
   
- /* @Test
-  public void testModificar() throws Exception {
-    driver.get("https://mern-crud.herokuapp.com");
+  @Test
+  public void testBModificar() throws Exception {
+    driver.get("https://mern-crud.herokuapp.com/");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
@@ -68,18 +71,21 @@ public class TestAgregar {
     String textoEjecucion = driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
     String textoEsperado = "Maria Tapia";
     assertThat(textoEsperado, is(textoEjecucion));
-  }*/
+  }
 
- @Test
-  public void testEliminar() throws Exception {
-    driver.get("https://mern-crud.herokuapp.com");
+  @Test
+  public void testCEliminar() throws Exception {
+    driver.get("https://mern-crud.herokuapp.com/");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Maria Tapia'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("xpath=//div[@id='root']/div/div[2]/table/tbody/tr/td")).click();
+   
     pause(5000);
-	String textoEjecucion = driver.findElement(By.xpath("xpath=//div[@id='root']/div/div[2]/table/tbody/tr/td")).getText();
-    String textoEsperado = "Maria Tapia";
-    assertThat(textoEsperado, not(textoEjecucion));
+    String nombre = "Maria tapia";
+    String bodyText = driver.findElement(By.tagName("body")).getText();
+    //Assert.assertTrue("Text not found!", bodyText.contains(nombre));
+    assertThat(nombre, not(bodyText));
+
+    
   }
   
   @After
